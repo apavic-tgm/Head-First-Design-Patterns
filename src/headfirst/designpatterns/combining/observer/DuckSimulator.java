@@ -1,6 +1,16 @@
 package headfirst.designpatterns.combining.observer;
 
+
+/**
+ * -Testen der Enten 
+ * @author Antonio Pavic
+ * @version 1.6.2016
+ */
 public class DuckSimulator {
+	
+	/**
+	 * @param args		Main Methode
+	 */
 	public static void main(String[] args) {
 		DuckSimulator simulator = new DuckSimulator();
 		AbstractDuckFactory duckFactory = new CountingDuckFactory();
@@ -8,6 +18,9 @@ public class DuckSimulator {
 		simulator.simulate(duckFactory);
 	}
   
+	/**
+	 * @param duckFactory		Methoden Aufraufen die mit DuckFactory zusammenhängen	
+	 */
 	void simulate(AbstractDuckFactory duckFactory) {
   
 		Quackable redheadDuck = duckFactory.createRedheadDuck();
@@ -48,6 +61,9 @@ public class DuckSimulator {
 		                   " times");
 	}
  
+	/**
+	 * @param duck
+	 */
 	void simulate(Quackable duck) {
 		duck.quack();
 	}
